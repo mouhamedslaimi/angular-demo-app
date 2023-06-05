@@ -42,7 +42,7 @@ HttpClientModule
 ],
 "scripts": [
   "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
-]<
+]
 
 Update styles.css 
 >@import "~bootstrap-icons/font/bootstrap-icons.css";
@@ -60,6 +60,6 @@ inside db.json add this code
       "checked": true
     }
   ]
-}<
+}
 
 3 - Run the backend server  : json-server -w data/db.json -p 8089

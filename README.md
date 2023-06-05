@@ -6,10 +6,13 @@
 #### Run app : ng serve
 
 ## App configuration 
-1 - Genrate component ,services , models
-Components :
+1 - Genrate components ,services , models :
 >ng g c home
+
+
 >ng g c products
+
+
 >ng g c new-products
 
 Service : 

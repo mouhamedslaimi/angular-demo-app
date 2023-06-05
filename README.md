@@ -1,27 +1,65 @@
-# DemoApp
+# Angular-demo-app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
+## Angular crud app using json server .
 
-## Development server
+#### Create new app : ng new angular-demo-app
+#### Run app : ng serve
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## App configuration 
+1 - Genrate component ,services , models
+Components :
+>ng g c home
+>ng g c products
+>ng g c new-products
 
-## Code scaffolding
+Service : 
+> run ng g s services/product 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Models :
+> ng g cl  models/product
 
-## Build
+2- Add routing 
+Open app-routing.module.ts and then add this code 
+>const routes: Routes = [
+  {path : "home",component :HomeComponent},
+  {path : "products",component :ProductsComponent},
+  {path : "newProduct",component :NewProductComponent}
+];
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3 - Import usefull moduls :
+add this moduls to app.module.ts
+>ReactiveFormsModule 
+FormsModule 
+HttpClientModule 
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Style configuration 
+1-  Run : npm i bootstrap bootstrap-icons 
+2-  Update angular.json file by adding this code.
+> "styles": [
+  "src/styles.css",
+  "node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+"scripts": [
+  "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+]<
 
-## Running end-to-end tests
+Update styles.css 
+>@import "~bootstrap-icons/font/bootstrap-icons.css";
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Backend configuration 
+1 - Install json-server  : npm install -g json-server
+2 - create data/db.json 
+inside db.json add this code 
+> {
+  "products": [
+    {
+      "id": 1,
+      "name": "Computer",
+      "price": 5600,
+      "checked": true
+    }
+  ]
+}<
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3 - Run the backend server  : json-server -w data/db.json -p 8089

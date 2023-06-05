@@ -5,9 +5,37 @@
 #### Create new app : ng new angular-demo-app
 #### Run app : ng serve
 
+## App configuration 
+1 - Genrate component ,services , models
+Components :
+>ng g c home
+>ng g c products
+>ng g c new-products
+
+Service : 
+> run ng g s services/product 
+
+Models :
+> ng g cl  models/product
+
+2- Add routing 
+Open app-routing.module.ts and then add this code 
+>const routes: Routes = [
+  {path : "home",component :HomeComponent},
+  {path : "products",component :ProductsComponent},
+  {path : "newProduct",component :NewProductComponent}
+];
+
+3 - Import usefull moduls :
+add this moduls to app.module.ts
+>ReactiveFormsModule 
+FormsModule 
+HttpClientModule 
+
+
 ## Style configuration 
-**1-**  Run : npm i bootstrap bootstrap-icons 
-**2-**  Update angular.json file by adding this code.
+1-  Run : npm i bootstrap bootstrap-icons 
+2-  Update angular.json file by adding this code.
 > "styles": [
   "src/styles.css",
   "node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -19,7 +47,7 @@
 Update styles.css 
 >@import "~bootstrap-icons/font/bootstrap-icons.css";
 
-**3-** Backend configuration 
+## Backend configuration 
 1 - Install json-server  : npm install -g json-server
 2 - create data/db.json 
 inside db.json add this code 
@@ -35,28 +63,3 @@ inside db.json add this code
 }<
 
 3 - Run the backend server  : json-server -w data/db.json -p 8089
-**4 -** Genrate component ,services , models
-Components :
->ng g c home
->ng g c products
->ng g c new-products
-
-Service : 
-> run ng g s services/product 
-
-Models :
-> ng g cl  models/product
-
-** 5-** Add routing 
-Open app-routing.module.ts and then add this code 
->const routes: Routes = [
-  {path : "home",component :HomeComponent},
-  {path : "products",component :ProductsComponent},
-  {path : "newProduct",component :NewProductComponent}
-];
-
-**6 -** Import usefull moduls :
-add this moduls to app.module.ts
->ReactiveFormsModule 
-FormsModule 
-HttpClientModule 

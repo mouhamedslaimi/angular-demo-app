@@ -52,8 +52,11 @@ Update styles.css
 
 ## Backend configuration 
 1 - Install json-server  : npm install -g json-server
+
 2 - create data/db.json 
+
 inside db.json add this code 
+
 > {
   "products": [
     {

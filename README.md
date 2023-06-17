@@ -38,7 +38,9 @@ HttpClientModule
 
 ## Style configuration 
 1-  Run : npm i bootstrap bootstrap-icons 
+
 2-  Update angular.json file by adding this code.
+
 > "styles": [
   "src/styles.css",
   "node_modules/bootstrap/dist/css/bootstrap.min.css"

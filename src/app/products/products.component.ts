@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Product} from "../models/product";
 import {ProductService} from "../services/product.service";
 import {Observable} from "rxjs";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -12,13 +13,20 @@ export class ProductsComponent implements OnInit{
   public products :  Array<Product> = [] ;
   PRODUCT_ENDPOINT_API : string = "http://localhost:8089/products/";
   public keyword :string ="";
-  constructor(private productService:ProductService) {
+  constructor(
+    private productService:ProductService,
+    private route :ActivatedRoute
+    ) {
   }
   ngOnInit(){
     this.getProducts();
   }
   getProducts(){
- this.productService.getProducts(1,10).
+    this.route.data.subscribe(res=>{
+      this.products=res['data'];
+    })
+
+/*  this.productService.getProducts(1,10).
     subscribe(
       {
       next : data =>{
@@ -28,7 +36,7 @@ export class ProductsComponent implements OnInit{
         console.log(err)
         }
       }
-    )
+    ) */
 //    this.products$ = this.productService.getProducts();
 
   }

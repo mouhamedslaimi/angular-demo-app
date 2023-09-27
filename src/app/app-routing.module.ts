@@ -8,6 +8,8 @@ import {AdminComponent} from "./admin/admin.component";
 import { AuthGuardService } from './services/auth.guard';
 import { roleGuard } from './services/role.guard';
 import { notCompleteGuard } from './services/not-complete.guard';
+import { moduleGuard } from './services/module.guard';
+import { ResolveGuard } from './services/resolve.guard';
 
 
 const routes: Routes = [
@@ -17,11 +19,15 @@ const routes: Routes = [
     canActivateChild :[roleGuard],
     children :[{path:"product",component:ProductsComponent}]
   },
-  {path : "products",component :ProductsComponent},
+  {path : "products"
+  ,component :ProductsComponent,
+  resolve : {data: ResolveGuard}
+},
   {
     path : "newProduct",
     component :NewProductComponent,
-    canDeactivate : [notCompleteGuard]
+    canDeactivate : [notCompleteGuard],
+    canMatch : [moduleGuard]
   },
   {path : "access-denied",component :AccessDeniedComponent},
   {path : "admin",component :AdminComponent , canActivate :[AuthGuardService]},

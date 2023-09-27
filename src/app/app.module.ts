@@ -9,6 +9,9 @@ import { NewProductComponent } from './new-product/new-product.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ProductService} from "./services/product.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
+import { HeaderComponent } from './header/header.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     HomeComponent,
     ProductsComponent,
     NewProductComponent,
+    AccessDeniedComponent,
+    HeaderComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

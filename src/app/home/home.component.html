@@ -2,6 +2,16 @@
   <div class="card">
     <div class="card-body">
       <h3>Home Component</h3>
+      <div>
+        <button 
+        [routerLink]="['product']" routerLinkActive="router-link-active" 
+        class="btn btn-primary">
+          Product
+        </button>
+      </div>
     </div>
   </div>
 </div>
+<router-outlet>
+
+</router-outlet>

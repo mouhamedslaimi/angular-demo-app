@@ -6,12 +6,23 @@ import {NewProductComponent} from "./new-product/new-product.component";
 import {AccessDeniedComponent} from "./access-denied/access-denied.component";
 import {AdminComponent} from "./admin/admin.component";
 import { AuthGuardService } from './services/auth.guard';
+import { roleGuard } from './services/role.guard';
+import { notCompleteGuard } from './services/not-complete.guard';
 
 
 const routes: Routes = [
-  {path : "home",component :HomeComponent},
+  {
+    path : "home",
+    component :HomeComponent,
+    canActivateChild :[roleGuard],
+    children :[{path:"product",component:ProductsComponent}]
+  },
   {path : "products",component :ProductsComponent},
-  {path : "newProduct",component :NewProductComponent},
+  {
+    path : "newProduct",
+    component :NewProductComponent,
+    canDeactivate : [notCompleteGuard]
+  },
   {path : "access-denied",component :AccessDeniedComponent},
   {path : "admin",component :AdminComponent , canActivate :[AuthGuardService]},
 

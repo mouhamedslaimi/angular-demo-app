@@ -1,21 +1,33 @@
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Demo App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav" *ngFor="let action of actions">
+        <a (click)="setCurrentAction(action)" routerLink="{{action.route}}" class="nav-link" >
+        {{action.title}}
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- 
 <nav class="p-3">
-  <ul class="nav nav-pills">
+  <ul class="navbar navbar-dark bg-dark">
     <li *ngFor="let action of actions">
-      <button
-        (click)="setCurrentAction(action)"
-        routerLink="{{action.route}}"
-        [class]="action==currentAction
-        ?'btn btn-success ms-1':'btn btn-outline-success ms-1'"
-      >
+      <button (click)="setCurrentAction(action)" routerLink="{{action.route}}" [class]="action==currentAction
+        ?'btn btn-success ms-1':'btn btn-outline-success ms-1'">
         {{action.title}}
         <i class="bi bi-{{action.icon}}"></i>
       </button>
     </li>
-    <li>  <button style="float:right"
-                  class="btn btn-success"
-                  routerLink="/admin">Admin</button>
+    <li >
+      <button style="float:right;margin-left: 1rem;" class="btn btn-success" routerLink="/admin">Admin</button>
     </li>
   </ul>
-
-
 </nav>
+ -->

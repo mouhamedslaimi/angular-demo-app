@@ -37,7 +37,8 @@ HttpClientModule
 
 
 ## Style configuration 
-1-  Run : npm i bootstrap bootstrap-icons 
+1-  Run : 
+> npm i bootstrap bootstrap-icons 
 
 2-  Update angular.json file by adding this code.
 
@@ -53,7 +54,8 @@ Update styles.css
 >@import "~bootstrap-icons/font/bootstrap-icons.css";
 
 ## Backend configuration 
-1 - Install json-server  : npm install -g json-server
+1 - Install json-server  :
+> npm install -g json-server
 
 2 - create data/db.json 
 
@@ -70,4 +72,5 @@ inside db.json add this code
   ]
 }
 
-3 - Run the backend server  : json-server -w data/db.json -p 8089
+3 - Run the backend server  : 
+> json-server -w data/db.json -p 8089

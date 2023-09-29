@@ -13,5 +13,32 @@
   </div>
 </div>
 <router-outlet>
-
 </router-outlet>
+<div class="container">
+  <h1>My Dashboard</h1>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card" style="width: 25rem">
+        <div class="card-body">
+          <div class="lead">School</div>
+          <h2 class="card-title">{{schollCnt}}</h2>
+          <div class="spinner-border" *ngIf="isSpinnerOne" role="status">
+            <span class="visually-hidden" >...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card" style="width: 25rem">
+        <div class="card-body">
+          <div class="lead">Hospital</div>
+          <h2 class="card-title">{{hospitalCnt}}</h2>
+          <div class="spinner-border" *ngIf="isSpinnerTwo" role="status">
+            <span class="visually-hidden" >...</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

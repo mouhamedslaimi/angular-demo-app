@@ -1,4 +1,7 @@
 <div class="container">
     <div class="title">Observables Demo page</div>
     <button class="btn btn-danger" (click)="getData()">Get Data</button>
+    <ul *ngFor="let item of data">
+        <li>{{item}}</li>
+    </ul>
 </div>

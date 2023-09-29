@@ -9,7 +9,10 @@ export class HeaderComponent {
  actions : Array<any> =[
     {title :"Home", "route":"/home",icon :"house"},
     {title :"products", "route":"/products",icon :"search"},
-    {title :"newProduct", "route":"/newProduct",icon :"safe"}
+    {title :"newProduct", "route":"/newProduct",icon :"safe"},
+    {title :"promises", "route":"/promises",icon :"safe"},
+    {title :"observables", "route":"/observables",icon :"safe"}
+
   ]
   currentAction : any;
 

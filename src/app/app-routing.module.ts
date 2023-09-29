@@ -10,6 +10,8 @@ import { roleGuard } from './services/role.guard';
 import { notCompleteGuard } from './services/not-complete.guard';
 import { moduleGuard } from './services/module.guard';
 import { ResolveGuard } from './services/resolve.guard';
+import { PromisesComponent } from './promises/promises.component';
+import { ObservablesComponent } from './observables/observables.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,7 @@ const routes: Routes = [
   {path : "products"
   ,component :ProductsComponent,
   resolve : {data: ResolveGuard}
-},
+  },
   {
     path : "newProduct",
     component :NewProductComponent,
@@ -31,7 +33,14 @@ const routes: Routes = [
   },
   {path : "access-denied",component :AccessDeniedComponent},
   {path : "admin",component :AdminComponent , canActivate :[AuthGuardService]},
-
+  {
+    path : "promises",
+    component :PromisesComponent,
+  },
+  {
+    path : "observables",
+    component :ObservablesComponent,
+  },
 ];
 
 @NgModule({

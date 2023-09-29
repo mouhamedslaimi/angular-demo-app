@@ -10,7 +10,7 @@ export class ProductService {
   PRODUCT_ENDPOINT_API : string = "http://localhost:8089/products";
   constructor(private http: HttpClient) { }
   getProducts(page : number=1,size :number=4): Observable<Array<Product>> {
-    return this.http.get<Array<Product>>(this.PRODUCT_ENDPOINT_API+`?_page=${page}&_limit=${size}`).pipe(delay(4000));
+    return this.http.get<Array<Product>>(this.PRODUCT_ENDPOINT_API+`?_page=${page}&_limit=${size}`).pipe(delay(3000));
   }
   checkProduct(product :Product) : Observable<Product>{
     return this.http.patch<Product>(this.PRODUCT_ENDPOINT_API +`/${product.id}`,

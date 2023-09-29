@@ -12,6 +12,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { HeaderComponent } from './header/header.component';
 import { AdminComponent } from './admin/admin.component';
+import { PromisesComponent } from './promises/promises.component';
+import { ObservablesComponent } from './observables/observables.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { AdminComponent } from './admin/admin.component';
     AccessDeniedComponent,
     HeaderComponent,
     AdminComponent,
+    PromisesComponent,
+    ObservablesComponent,
   ],
   imports: [
     BrowserModule,
